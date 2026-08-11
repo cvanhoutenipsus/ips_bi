@@ -28,10 +28,10 @@ enriched as (
         last_day(try_strptime(month_name, '%b-%y')::date) as gl_date,
 
         case
-            when reporting_type in ('Reclass (LC)', 'Adjustments (LC)')
+            when reporting_type in ('G/L Data (LC)','Reclass (LC)', 'Adjustments (LC)')
                  and gl_code in ('9997', '0401', '9996', '9995')
                 then 'GBP'
-            when reporting_type in ('Reclass (LC)', 'Adjustments (LC)')
+            when reporting_type in ('G/L Data (LC)','Reclass (LC)', 'Adjustments (LC)')
                 then 'CAD'
             else 'USD'
         end as currency
