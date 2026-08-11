@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: planful
+    database: ips_raw_data_warehouse
+    schema: Planful
+    tables:
+      - name: journal_entries_actual
+      - name: aop_fcst_scenarios
+      - name: planful_proforma_data
