@@ -1,0 +1,24 @@
+version: 2
+
+seeds:
+  - name: planful_acq_erp_cutover
+    description: >
+      Cutover dates for acquisition entities transitioning from Planful actuals
+      to ERP. Planful is authoritative through erp_cutover_date; ERP takes over
+      the day after. One row per Segment2 code.
+    config:
+      column_types:
+        segment2_code: varchar
+        erp_cutover_date: date
+        entity_name: varchar
+        notes: varchar
+    columns:
+      - name: segment2_code
+        description: Planful Segment2 (service center) code
+        tests:
+          - unique
+          - not_null
+      - name: erp_cutover_date
+        description: Last date Planful is authoritative for this entity
+        tests:
+          - not_null
