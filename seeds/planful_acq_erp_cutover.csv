@@ -13,7 +13,7 @@ segment2_code,erp_cutover_date,entity_name,notes
 3100,2025-10-31,Tram,-
 0004,2025-10-31,B&B,-
 3200,2026-02-28,Demaria,-
-0404,2028-01-31,Houghton,-
+0401,2028-01-31,Houghton,-
 4300,2028-01-31,Sanford,-
 3900,2026-09-30,Swiger,-
 0005,2028-01-31,MDL,-
@@ -21,3 +21,8 @@ segment2_code,erp_cutover_date,entity_name,notes
 2900,2028-01-31,ENA,-
 0007,2028-01-31,CFM,-
 0006,2026-07-31,Switchgear,-
+8693,2028-01-31,ABB Buf US,-
+8694,2028-01-31,ABB Buf CAD,-
+4000,2024-09-30,Calgary,-
+4100,2024-09-30,Ft Mac,-
+4200,2024-09-30,Edmonton,-
