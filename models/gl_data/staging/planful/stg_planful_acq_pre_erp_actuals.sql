@@ -5,11 +5,9 @@ with source_data as (
     select
         'Actual'          as source_type,
         Scenario          as scenario,
-        FiscalYear        as fiscal_year,
-        FiscalMonth       as fiscal_month,
-        MonthName         as month_name,
         Reporting         as reporting_type,
         Segment1          as account_code,
+        MonthName         as month_name,
         Segment2          as gl_code,
         Segment3          as intercompany,
         Segment4          as ips_dept,
@@ -53,9 +51,6 @@ cutover as (
 select
     e.source_type,
     e.scenario,
-    e.fiscal_year,
-    e.fiscal_month,
-    e.month_name,
     e.reporting_type,
     e.account_code,
     e.gl_code,
