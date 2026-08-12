@@ -53,6 +53,10 @@ select
     e.scenario,
     e.reporting_type,
     e.account_code,
+    -- 4400 was folded into 5500 in a rooftop consolidation.
+    -- Cutover is matched on the original 4400 code, then relabelled.
+    case when e.gl_code = '4400' then '5500' else e.gl_code end as gl_code,
+
     e.gl_code,
     e.intercompany,
     e.ips_dept,
