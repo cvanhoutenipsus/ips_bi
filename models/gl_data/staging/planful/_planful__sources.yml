@@ -9,4 +9,5 @@ sources:
       - name: aop_fcst_scenarios
       - name: planful_proforma_data
       - name: planful_actual_scenario
+      - name: ips_gl_account_master
       
