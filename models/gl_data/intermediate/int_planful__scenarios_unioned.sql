@@ -3,7 +3,7 @@
 with actuals as (
 
     select
-        'Actual'          as source_type,
+        'Planful Consolidations'          as source_type,
         Scenario          as scenario,
         FiscalYear        as fiscal_year,
         FiscalMonth       as fiscal_month,
@@ -25,7 +25,7 @@ with actuals as (
 plan as (
 
     select
-        'Plan'            as source_type,
+        'Plan_Forecast'            as source_type,
         Scenario          as scenario,
         FiscalYear        as fiscal_year,
         FiscalMonth       as fiscal_month,

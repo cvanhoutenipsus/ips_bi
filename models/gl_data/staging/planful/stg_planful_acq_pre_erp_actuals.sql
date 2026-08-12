@@ -3,7 +3,7 @@
 with source_data as (
 
     select
-        'Actual'          as source_type,
+        'Acq Pre-ERP Actual'          as source_type,
         Scenario          as scenario,
         Reporting         as reporting_type,
         Segment1          as account_code,
