@@ -110,7 +110,7 @@ select
     currency,
     loaded_at,
     planful_je_flag,
-    case when source_type in ('Actual','Proforma')       then mtd_amount end as trans_amt,
+    case when source_type in ('Acq Pre-ERP Actual','Proforma','Planful Consolidations')       then mtd_amount end as trans_amt,
     case when scenario ilike '%AOP%'                     then mtd_amount end as aop_amt,
     case when scenario ilike '%fcst%'
          or scenario ilike '%forecast%'                  then mtd_amount end as fcst_amt
