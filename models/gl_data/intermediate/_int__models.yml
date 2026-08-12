@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: int_gl__unioned
+    description: >
+      Transaction-grain union of all GL sources — Planful scenarios,
+      acquisition pre-ERP actuals, and ERP transactions. One row per
+      source transaction (Planful monthly summaries treated as transactions).
+    config:
+      contract:
+        enforced: false
+    columns:
+      - name: scenario
+        data_type: varchar
+      - name: reporting_type
+        data_type: varchar
+      - name: account_code
+        data_type: varchar
+      - name: gl_code
+        data_type: varchar
+      - name: intercompany
+        data_type: varchar
+      - name: ips_dept
+        data_type: varchar
+      - name: future_1
+        data_type: varchar
+      - name: gl_date
+        data_type: date
+      - name: trans_date
+        data_type: date
+      - name: currency
+        data_type: varchar
+      - name: loaded_at
+        data_type: timestamp
+      - name: trans_amt
+        data_type: double
+      - name: aop_amt
+        data_type: double
+      - name: fcst_amt
+        data_type: double
+      - name: planful_je_flag
+        data_type: varchar
