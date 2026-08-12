@@ -15,6 +15,7 @@ with source_data as (
         Segment4          as ips_dept,
         Segment5          as future_1,
         MtdAmount         as mtd_amount,
+        'No'              as planful_je_flag,
         _flight_loaded_at as loaded_at
 
     from {{ source('planful', 'planful_actual_scenario') }}
@@ -65,6 +66,7 @@ select
     e.gl_date as trans_date,
     e.currency,
     e.loaded_at,
+    e.planful_je_flag,
     e.mtd_amount as trans_amt,
     cast(null as double) as aop_amt,
     cast(null as double) as fcst_amt

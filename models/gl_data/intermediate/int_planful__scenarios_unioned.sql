@@ -15,6 +15,7 @@ with actuals as (
         Segment4          as ips_dept,
         Segment5          as future_1,
         MtdAmount         as mtd_amount,
+        'Planful JE'      as planful_je_flag,  
         _flight_loaded_at as loaded_at
 
     from {{ source('planful', 'journal_entries_actual') }}
@@ -36,6 +37,7 @@ plan as (
         Segment4          as ips_dept,
         Segment5          as future_1,
         MtdAmount         as mtd_amount,
+        'No'              as planful_je_flag,  
         _flight_loaded_at as loaded_at
 
     from {{ source('planful', 'aop_fcst_scenarios') }}
@@ -57,6 +59,7 @@ proforma as (
         Segment4          as ips_dept,
         Segment5          as future_1,
         MtdAmount         as mtd_amount,
+        'No'              as planful_je_flag,
         _flight_loaded_at as loaded_at
 
     from {{ source('planful', 'planful_proforma_data') }}
@@ -106,6 +109,7 @@ select
     gl_date as trans_date,
     currency,
     loaded_at,
+    planful_je_flag,
     case when source_type in ('Actual','Proforma')       then mtd_amount end as trans_amt,
     case when scenario ilike '%AOP%'                     then mtd_amount end as aop_amt,
     case when scenario ilike '%fcst%'
